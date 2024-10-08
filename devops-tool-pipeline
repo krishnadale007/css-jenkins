@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Pull Source Code') {
             steps {
-                git 'https://github.com/krishnadale007/DevopsTool-Jenkins-Integration.git'
+                git 'https://github.com/krishnadale007/css-jenkins.git'
             }
         }
 
