@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_REPO = 'krishnadale/css-jenkins'
+        DOCKERHUB_REPO = 'krishnadale/devops-tool-jenkins-pipeline'
     }
 
     stages {
