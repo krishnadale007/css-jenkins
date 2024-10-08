@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_REPO = 'sohampatil08/devops-tool-jenkins-pipeline'
+        DOCKERHUB_REPO = 'krishnadale/devops-tool-jenkins-pipeline'
     }
 
     stages {
         stage('Pull Source Code') {
             steps {
-                git 'https://github.com/soham08022001/DevopsTool-Jenkins-Integration.git'
+                git 'https://github.com/krishnadale007/DevopsTool-Jenkins-Integration.git'
             }
         }
 
