@@ -3,32 +3,19 @@ pipeline {
     stages {
         stage('Pull') {
             steps {
-                // Pull the Git repository
-                git 'https://github.com/krishnadale007/css-jenkins.git'
-                echo 'Pulled Successfully'
+             https://github.com/krishnadale007/css-jenkins.git   git ''
+
+this pipe does not build mutiple because this expose 80 andexited image and containe howto remove it 
+                echo 'Pull Successfully'
                 sh 'ls'
-            }
-        }
-        stage('remove exit image and container ') {
-            steps {
-                script {
-                    // Remove all stopped containers
-                    sh 'docker rm -f $(docker ps -aq)'
-                    // Remove all Docker images
-                    sh 'docker rmi -f $(docker images -q)'
-                    echo 'remove completed'
-                }
             }
         }
         stage('Build Docker image') {
             steps {
                 script {
-                    // Build the Docker image and run it
-                    sh '''
-                        docker build -t dockerimage .
-                        docker run -d -p 80:80 dockerimage
-                    '''
-                    echo 'Build and run successfully'
+                    sh '''docker build -t dockerimage .
+                          docker run -itd -p 80:80 dockerimage'''
+                    echo 'Build Successfully'
                 }
             }
         }
