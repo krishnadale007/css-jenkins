@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     sh '''docker build -t dockerimage .
-                          docker run -itd -p 80:80 dockerimage'''
+                          docker run -itd -p 80:8080 dockerimage'''
                     echo 'Build Successfully'
                 }
             }
