@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    stages {
+        stage('Pull') {
+            steps {
+             https://github.com/krishnadale007/css-jenkins.git   git ''
+                echo 'Pull Successfully'
+                sh 'ls'
+            }
+        }
+        stage('Build Docker image') {
+            steps {
+                script {
+                    sh '''docker build -t dockerimage .
+                          docker run -itd -p 80:80 dockerimage'''
+                    echo 'Build Successfully'
+                }
+            }
+        }
+    }
+}
